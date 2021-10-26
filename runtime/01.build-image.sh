@@ -17,3 +17,8 @@ printf "======  请输入docker的镜像仓库的登录密码  ====== \n"
 docker login 
 
 docker push ${IMAGE_PATH}/${IMAGE_NAME}:${IMAGE_VERSION} 
+
+# 直接打latest标签
+docker tag ${IMAGE_PATH}/${IMAGE_NAME}:${IMAGE_VERSION} ${IMAGE_PATH}/${IMAGE_NAME}:latest
+
+docker push ${IMAGE_PATH}/${IMAGE_NAME}:latest
